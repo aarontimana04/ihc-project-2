@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class Door1Controller : MonoBehaviour
 {
     public bool isOpen = false;
     public float openAngle = 90f;
