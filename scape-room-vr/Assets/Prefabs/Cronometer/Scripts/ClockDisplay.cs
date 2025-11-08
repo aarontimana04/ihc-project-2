@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -8,61 +7,26 @@ public class CountdownClock : MonoBehaviour
     [SerializeField] private int startMinutes = 10;
     [SerializeField] private bool startOnAwake = true;
     [SerializeField] private GameObject GameOverPanel;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip tickSound;
 
     private float remaining;
     private bool running;
-    private int lastSecond; 
 
     void Awake()
     {
         remaining = startMinutes * 60f;
-        lastSecond = Mathf.FloorToInt(remaining); 
         if (label) label.text = Format(remaining);
-        if (GameOverPanel) GameOverPanel.SetActive(false);
+        if (startOnAwake) StartCountdown();
+
+        if (GameOverPanel) GameOverPanel.SetActive(false); // ocultar al inicio
     }
 
-    void Start()
-    {
-        if (startOnAwake)
-        {
-            StartCoroutine(IniciarCronometro());
-        }
-    }
-
-    IEnumerator IniciarCronometro()
-    {
-        yield return null;
-        running = true;
-    }
-
-    public void StartCountdown()
-    {
-        StartCoroutine(IniciarCronometro());
-    }
-
-    public void StopCountdown()
-    {
-        running = false;
-    }
+    public void StartCountdown() { running = true; }
+    public void StopCountdown() { running = false; }
 
     void Update()
     {
         if (!running) return;
-
         remaining -= Time.deltaTime;
-
-        int currentSecond = Mathf.FloorToInt(remaining);
-        if (currentSecond != lastSecond && remaining > 0)
-        {
-            lastSecond = currentSecond;
-
-            if (audioSource && tickSound)
-            {
-                audioSource.PlayOneShot(tickSound);
-            }
-        }
 
         if (remaining <= 0f)
         {
@@ -70,7 +34,7 @@ public class CountdownClock : MonoBehaviour
             running = false;
             if (GameOverPanel)
             {
-                GameOverPanel.SetActive(true);
+                GameOverPanel.SetActive(true); // muestra el panel cuando termina
             }
         }
 
