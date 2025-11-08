@@ -1,42 +1,86 @@
 using UnityEngine;
-
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class FlashlightInteractable : MonoBehaviour
+public class FlashlightController : MonoBehaviour
 {
-    private Light flashlight;
-    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
-    private bool wasPressed = false;
+    [Header("Referencias")]
+    [SerializeField] private Light spotLight;
+    [SerializeField] private XRGrabInteractable grabInteractable;
 
-    void Start()
+    [Header("Configuración")]
+    [SerializeField] private XRNode controllerNode = XRNode.RightHand;
+    [SerializeField] private bool isOn = false;
+
+    [Header("Audio (Opcional)")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip clickSound;
+
+    private void Awake()
     {
-        flashlight = GetComponentInChildren<Light>();
-        grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+        // Obtener componentes si no están asignados
+        if (spotLight == null)
+            spotLight = GetComponentInChildren<Light>();
 
-        if (flashlight != null)
+        if (grabInteractable == null)
+            grabInteractable = GetComponent<XRGrabInteractable>();
+
+        // Asegurarse de que la luz empiece apagada
+        if (spotLight != null)
+            spotLight.enabled = isOn;
+    }
+
+    private void OnEnable()
+    {
+        // Suscribirse a eventos de agarre
+        if (grabInteractable != null)
         {
-            flashlight.enabled = false;
+            grabInteractable.activated.AddListener(OnActivate);
         }
     }
 
-    void Update()
+    private void OnDisable()
     {
-        // Verificar si está agarrada
-        if (grabInteractable != null && grabInteractable.isSelected)
+        // Desuscribirse de eventos
+        if (grabInteractable != null)
         {
-            // Buscar cualquier controlador derecho
-            InputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+            grabInteractable.activated.RemoveListener(OnActivate);
+        }
+    }
 
-            // Leer botón primario
-            bool pressed;
-            if (rightHand.TryGetFeatureValue(CommonUsages.primaryButton, out pressed))
-            {
-                if (pressed && !wasPressed)
-                {
-                    flashlight.enabled = !flashlight.enabled;
-                }
-                wasPressed = pressed;
-            }
+    // Método llamado cuando se presiona el botón de activación mientras se agarra
+    private void OnActivate(ActivateEventArgs args)
+    {
+        ToggleLight();
+    }
+
+    private void ToggleLight()
+    {
+        isOn = !isOn;
+
+        if (spotLight != null)
+        {
+            spotLight.enabled = isOn;
+        }
+
+        // Reproducir sonido si está configurado
+        if (audioSource != null && clickSound != null)
+        {
+            audioSource.PlayOneShot(clickSound);
+        }
+
+        Debug.Log($"Flashlight {(isOn ? "encendida" : "apagada")}");
+    }
+
+    // Método público por si quieres encender/apagar desde otro script
+    public void SetLightState(bool state)
+    {
+        isOn = state;
+        if (spotLight != null)
+        {
+            spotLight.enabled = isOn;
         }
     }
 }
+
