@@ -920,7 +920,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -940,11 +946,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: eb62e8c8-b50f-420f-84ae-79416b403ecd
+  cloudProjectId: b7bf1909-40d8-4218-9fd5-3f03a6bf2b7c
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: scape-room-vr
-  organizationId: unity_e7e82f80847315986205
+  organizationId: sofia-sm
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
