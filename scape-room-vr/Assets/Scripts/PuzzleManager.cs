@@ -6,7 +6,11 @@ public class PuzzleManager : MonoBehaviour
     public Pedestal[] pedestals;
 
     [Header("Script que se ejecutará al completar el puzzle")]
-    public PuzzleEventHandler eventHandler; // Este será un objeto de tipo PuzzleEventHandler
+    public PuzzleEventHandler eventHandler;
+
+    [Header("Audio al completar el puzzle")]
+    public AudioSource audioSource;
+    public AudioClip puzzleSolvedClip;
 
     private bool puzzleCompleted = false;
 
@@ -34,10 +38,20 @@ public class PuzzleManager : MonoBehaviour
     {
         Debug.Log("¡Puzzle completado correctamente!");
 
+        // Reproducir sonido
+        if (audioSource != null && puzzleSolvedClip != null)
+        {
+            audioSource.PlayOneShot(puzzleSolvedClip);
+        }
+        else
+        {
+            Debug.LogWarning("Falta AudioSource o AudioClip en PuzzleManager.");
+        }
+
         // Llamamos al manejador del evento (si está asignado)
         if (eventHandler != null)
         {
-            eventHandler.OnPuzzleSolved(); // Aquí se llama al otro script
+            eventHandler.OnPuzzleSolved();
         }
         else
         {
