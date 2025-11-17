@@ -20798,7 +20798,7 @@ MonoBehaviour:
   m_modelMetaTouchPlusLeftController: {fileID: 6639359978628072374}
   m_modelMetaTouchPlusRightController: {fileID: 4305865059138456925}
   m_controller: 2
-  m_showState: 1
+  m_showState: 0
   showWhenHandsArePoweredByNaturalControllerPoses: 0
   RayHelper: {fileID: 0}
 --- !u!137 &1169497314444604932
@@ -24957,7 +24957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HandType: 1
   _pointerPoseRoot: {fileID: 0}
-  m_showState: 0
+  m_showState: 3
   RayHelper: {fileID: 0}
 --- !u!210 &2033332424513858390
 SortingGroup:
@@ -62151,7 +62151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HandType: 0
   _pointerPoseRoot: {fileID: 0}
-  m_showState: 0
+  m_showState: 2
   RayHelper: {fileID: 0}
 --- !u!1 &6518575309873964559
 GameObject:
