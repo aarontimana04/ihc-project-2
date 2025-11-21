@@ -950,9 +950,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7316836861405260596, guid: 8dbdf71594191ea4c9c80261efc380e7, type: 3}
+    - {fileID: 4306950930833954090, guid: 8dbdf71594191ea4c9c80261efc380e7, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7457538333214782686, guid: 8dbdf71594191ea4c9c80261efc380e7, type: 3}
+    - {fileID: 5082952658010179379, guid: 8dbdf71594191ea4c9c80261efc380e7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2764081807839764549, guid: 8dbdf71594191ea4c9c80261efc380e7, type: 3}
