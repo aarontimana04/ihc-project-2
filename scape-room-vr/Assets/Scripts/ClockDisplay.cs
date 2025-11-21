@@ -37,6 +37,9 @@ public class CountdownClock : MonoBehaviour
         {
             remaining = 0f;
             running = false;
+
+            FindObjectOfType<LightController>()?.TurnOffAllLights();
+
             if (GameOverPanel)
             {
                 GameOverPanel.SetActive(true);
