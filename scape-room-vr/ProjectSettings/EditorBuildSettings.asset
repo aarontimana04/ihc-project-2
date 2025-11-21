@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: "Assets/Samples/Meta XR Interaction \u200BSDK/81.0.0/Example Scenes/ConcurrentHandsControllersExamples.unity"
     guid: 10824ac1a08b9a0459de4c071e1db2aa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ScapeRoom.unity
     guid: 7d352d6cdcbfc914aa6f8a536432c18e
+  - enabled: 1
+    path: Assets/Scenes/ScapeRoomV2.unity
+    guid: 9008ab0283fedc647a001960921195a8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2fdfac7085c06ea4a91a333f9b03c87c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 706fb3ee91b266b45a754b89d0325445, type: 2}
