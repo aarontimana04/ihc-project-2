@@ -39,11 +39,7 @@ public class CountdownClock : MonoBehaviour
             running = false;
 
             FindObjectOfType<LightController>()?.TurnOffAllLights();
-
-            if (GameOverPanel)
-            {
-                GameOverPanel.SetActive(true);
-            }
+            FindObjectOfType<ScreamerSequence>()?.PlayScreamer();
         }
 
         if (label) label.text = Format(remaining);
