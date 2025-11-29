@@ -9,7 +9,7 @@ public class PuzzleEventHandler : MonoBehaviour
     //public Transform openTransform;
     [SerializeField] private GameObject GameOverPanel;
 
-    // Este método es llamado por el PuzzleManager al resolver el puzzle
+    // Este mÃ©todo es llamado por el PuzzleManager al resolver el puzzle
     public void OnPuzzleSolved()
     {
         Debug.Log("Evento del puzzle resuelto ejecutado.");
@@ -21,9 +21,9 @@ public class PuzzleEventHandler : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No se ha asignado ningún objeto a desactivar en PuzzleEventHandler.");
+            Debug.LogWarning("No se ha asignado ningÃºn objeto a desactivar en PuzzleEventHandler.");
         }**/
-        // door.position = openTransform.position;
+        //door.position = openTransform.position;
         GameOverPanel.SetActive(false);
     }
 }
