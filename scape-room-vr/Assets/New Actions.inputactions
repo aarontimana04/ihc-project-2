@@ -1,0 +1,34 @@
+{
+    "name": "New Actions",
+    "maps": [
+        {
+            "name": "menupause",
+            "id": "312479dd-444e-4ffb-a635-44cc4edfbc73",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "87d2cbc0-1f21-4b14-8e5e-652caf3ab4c3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "77fd0172-dc6d-4c3e-948b-7ff285588279",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
