@@ -58,4 +58,10 @@ public class PuzzleManager : MonoBehaviour
             Debug.LogWarning("No hay PuzzleEventHandler asignado en el PuzzleManager.");
         }
     }
+
+    public bool IsCompleted()
+    {
+        return puzzleCompleted;
+    }
+
 }
