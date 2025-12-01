@@ -49,7 +49,7 @@ public class CountdownClock : MonoBehaviour
     void Update()
     {
         if (!running) return;
-
+        
         remaining -= Time.deltaTime;
 
         if (remaining <= 0f)
