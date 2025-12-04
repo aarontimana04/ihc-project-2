@@ -145,3 +145,14 @@ crashlytics-build.properties
 # Builds (agregar antes de todo)
 Builds/
 Builds2.0//
+
+# Oculus Avatar2 - archivos gigantes que NO deben subirse
+Assets/Oculus/Avatar2_SampleAssets/**/*.zip
+Assets/Oculus/Avatar2_SampleAssets/**/*.hdr
+Assets/Oculus/**/*.zip
+Assets/Oculus/**/*.hdr
+
+# Ignorar cualquier archivo zip o hdr pesado
+*.zip
+*.hdr
+
