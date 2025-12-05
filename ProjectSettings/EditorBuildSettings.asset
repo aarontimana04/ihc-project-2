@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BuildingBlocksScena.unity
     guid: c385c495a32351f4aa376ce2d4de0f6c
+  - enabled: 1
+    path: Assets/Scenes/EscapeRoom.unity
+    guid: c979616e42b5324449b9ae5fff9c77c9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 299d04289be17c845b8fd12ed6006f5c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 93d50f6388ec2004f8aaf891d563e8a9, type: 2}
